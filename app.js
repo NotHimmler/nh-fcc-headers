@@ -18,7 +18,7 @@ app.get('/api', function(req,res){
     var user = extractOS(req.headers['user-agent']);
     var lang = extractLang(req.headers['accept-language']);
     
-    var result = { 'ipaddress':address,'software':user,'language':lang };
+    var result = { 'ipaddress':address.length,'software':user,'language':lang };
     res.end(JSON.stringify(result))
 })
 
@@ -29,7 +29,7 @@ function extractOS(string){
     var second = string.search(regex);
     
     if (first > -1 && second > -1) {
-        return string.substring(first+1,second-1);
+        return string.substring(first+1,second);
     } else {
         return null;
     }
