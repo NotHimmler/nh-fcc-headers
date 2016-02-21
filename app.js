@@ -18,7 +18,10 @@ app.get('/api', function(req,res){
     var user = extractOS(req.headers['user-agent']);
     var lang = extractLang(req.headers['accept-language']);
     
-    var result = { 'ipaddress':address[address.length-1],'software':user,'language':lang };
+    var result = {'software':user,'language':lang };
+    for (var i = 0;i<address.length;i++){
+        result['ipaddress'+i] = address[i];
+    }
     res.end(JSON.stringify(result))
 })
 
