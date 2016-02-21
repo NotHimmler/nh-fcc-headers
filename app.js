@@ -3,6 +3,7 @@ var fs = require('fs')
 
 var app = express()
 app.use(express.static('static'))
+app.set('trust proxy', 'loopback')
 
 app.get('/',function(req,res){
 	fs.createReadStream('index.html').pipe(res)
@@ -18,10 +19,7 @@ app.get('/api', function(req,res){
     var user = extractOS(req.headers['user-agent']);
     var lang = extractLang(req.headers['accept-language']);
     
-    var result = {'software':user,'language':lang };
-    for (var i = 0;i<address.length;i++){
-        result['ipaddress'+i] = address[i];
-    }
+    var result = {'ipaddress':address,'software':user,'language':lang };
     res.end(JSON.stringify(result))
 })
 
