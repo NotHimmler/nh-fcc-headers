@@ -3,7 +3,7 @@ var fs = require('fs')
 
 var app = express()
 app.use(express.static('static'))
-app.set('trust proxy', 'loopback')
+app.set('trust proxy', 'loopback, linklocal, uniquelocal')
 
 app.get('/',function(req,res){
 	fs.createReadStream('index.html').pipe(res)
