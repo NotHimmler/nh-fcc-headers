@@ -1,7 +1,29 @@
 .container {
     width:40%;
-    text-align:center;
     margin-left:auto;
     margin-right: auto;
-    color:blue;
+    position:relative;
+    height:100%;
+}
+
+.example {
+    padding: 2px 2px 2px 2px;
+    border: 1px solid black;
+    border-radius:4px;
+    background-color:#ebeffd;
+    color:#a11111;
+}
+
+.footer {
+    position:absolute;
+    bottom:0px;
+    text-align:center;
+    width:100%;
+    height:30px;
+    line-height:30px;
+    color: #a11111;
+}
+
+.footer a:link, a:visited {
+    color:#a11111;
 }

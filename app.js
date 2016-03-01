@@ -13,7 +13,7 @@ app.get('/api', function(req,res){
     var address = req.ips;
     
     if (address.length === 0){
-        address = req.ip;
+        address = [req.ip];
     }
     
     var user = extractOS(req.headers['user-agent']);
