@@ -1,5 +1,6 @@
 var express = require('express')
 var fs = require('fs')
+var cors = require('cors')
 
 var app = express()
 app.use(express.static('static'))
