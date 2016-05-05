@@ -9,7 +9,8 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "mongodb": "~2.1.7",
-    "express": "~4.13.4"
+    "cors": "^2.7.1",
+    "express": "~4.13.4",
+    "mongodb": "~2.1.7"
   }
 }

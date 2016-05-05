@@ -9,7 +9,7 @@ app.get('/',function(req,res){
 	fs.createReadStream('index.html').pipe(res)
 })
 
-app.get('/api', function(req,res){
+app.get('/api', cors(), function(req,res){
     var address = req.ips;
     
     if (address.length === 0){
